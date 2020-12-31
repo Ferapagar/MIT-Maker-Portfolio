@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="gl-matrix.js" defer>
+    </script>
+</head>
+
+<body>
+    <div id="TitleScreen">
+        <h1>RUBIK'S CUBE SIMULATOR</h1>
+        <div class="selectionsBox">
+            <p>Please select your preferred dimensions:<br> <span id="showdims">3x3x3</span></p>
+            <input class="slider" type="range" max="100" min="3" value="3" onmousemove="updateTitle()"
+                onchange="updateTitle()">
+            <br>
+            <div id="lowdetail">
+                Low detail mode <span id="recommended"></span>
+                <input type="checkbox" id="ldm_checkbox">
+            </div>
+                <br>
+            <button id="startButton" onclick="start()">
+                Start
+            </button>
+        </div>
+        <div id="whiteScreen"></div>
+    </div>
+    <div id="tools">
+        <input id = "toolsicon" type="checkbox">
+        <div id="toolsmenu" >
+            <p>Layer to move <input type="number" id="layerToMove" min="1" max="1" value="1" onchange="changeLayer()"></p>
+            <p>
+                Shortcuts: <br>
+                <ul>
+                    <li>Move Upper layer: U</li>
+                    <li>Move Down layer: D</li>
+                    <li>Move Left layer: L</li>
+                    <li>Move Right layer: R</li>
+                    <li>Move Front layer: F</li>
+                    <li>Move Back layer: B</li>
+                    <li>Lower case ➡ Clockwise</li>
+                    <li>Upper case ➡ Counter-clockwise</li>
+                    <li>Scramble the cube: Lowercase "s"</li>
+                    <li>Auto-solve the cube: Uppercase "S"</li>
+                </ul>
+                <br>
+            </p>
+            <p>Fast Scramble <input type="checkbox" onchange="setFastScramble()" id="fastScramble"></p><br>
+            <p>Moving cube Animation time:  <span id="movetimespan">0.5s</span></p>
+            <input class="slider" id="anim_time" type="range" max="1" min="0" value="0.5" step=".01" onmousemove="changeAnimTime()"
+                onchange="changeAnimTime()">
+        </div>
+    </div>
+    <canvas id="glcanvas"></canvas>
+</body>
+<script type="text/javascript">
+    function changeAnimTime() {
+        let val = document.querySelector('#anim_time').value;
+        document.querySelector('#anim_time').style.setProperty(
+            '--sliderval',
+            val*100 + '%');
+        document.querySelector('#movetimespan').innerHTML = Math.floor(val*100)/100+'s';
+        cube.animation_times = {default:parseFloat(val)};
+    }
+    function updateTitle(){
+        let val = document.querySelector('.slider').value;
+        document.querySelector('#TitleScreen').style.setProperty(
+            '--sliderval',
+            val + '%');
+
+        document.querySelector('#showdims').innerHTML = val + 'x' + val + 'x' + val;
+        document.querySelector('#recommended').innerHTML = (val >= 30) ? "(recomended)" : "";
+    }
+    function start(){
+        App.start()
+    }
+    function changeLayer(){
+        layer = document.querySelector("#layerToMove").value-1;
+    }
+    function setFastScramble(){
+        cube.fastScramble = document.querySelector("#fastScramble").checked;
+    }
+</script>
+<script src="render.js"></script>
+<script src="script.js"></script>
+<script src="Cube/cubie.js"></script>
+<script src="Cube/config.js"></script>
+<script src="Cube/cube.js"></script>
+<script src="Cube/moveHandler.js"></script>
+<script src="Cube/solver/solve.js"></script>
+<script src="Cube/solver/solve3x3x3.js"></script>
+<script src="Cube/solver/solve_centers.js"></script>
+<script src="Cube/solver/solve_edges.js"></script>

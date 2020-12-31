@@ -1,0 +1,234 @@
+* {
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+:root {
+    --sliderval: 30;
+}
+
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+canvas {
+    background-color: #262626;
+}
+
+#TitleScreen {
+    --sliderval: 1%;
+    position: absolute;
+    color: white;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #262626aa;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#TitleScreen h1 {
+    margin-bottom: 100px;
+    font-size: 60px;
+}
+
+#TitleScreen p {
+    text-align: center;
+}
+
+.slider {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    -webkit-appearance: none;
+    appearance: none;
+    min-width: 200px;
+    height: 10px;
+    background: linear-gradient(to right, rgb(0, 217, 255) var(--sliderval), #0000 var(--sliderval), #0000), linear-gradient(to left, white, rgb(129, 152, 182));
+    opacity: .7;
+    transition: opacity .4s;
+    outline: none;
+    border-radius: 5px;
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(to right, rgb(0, 217, 255), lime, yellow, red);
+    background-size: 1000% 100%;
+    background-position: var(--sliderval);
+    border-radius: 10px;
+    cursor: pointer;
+}
+#anim_time{
+    --sliderval: 1%;
+}
+
+.slider::slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: rgb(0, 217, 255);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.selectionsBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 50px;
+    margin-bottom: 100px;
+    padding: 40px;
+    background-color: #000a;
+    border-radius: 25px;
+}
+
+#lowdetail {
+    position: relative;
+    width: 100%;
+}
+
+#ldm_checkbox {
+    position: absolute;
+    right: 0;
+}
+input[type=checkbox]{
+    transform: translateY(25%);
+    -webkit-appearance: none;
+    appearance: none;
+    background: orangered;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    transition: 1s;
+}
+
+input[type=checkbox]:hover {
+    box-shadow: 0px 0px 5px rgba(245, 245, 245, 0.479);
+}
+input[type=checkbox]:checked {
+    transform: translateY(35%) rotateY(180deg);
+    background-color: springgreen;
+}
+
+#startButton {
+    position: relative;
+    width: 50%;
+    height: 50px;
+    left: 25%;
+    appearance: none;
+    color: white;
+    font-size: larger;
+    border: none;
+    border-radius: 20px;
+    background: linear-gradient(135deg, black 40%, rgb(0, 217, 255) 40%, yellow);
+    background-size: 300% 100%;
+    background-position: 0% 0%;
+    transition: .5s;
+}
+
+#startButton:hover {
+    box-shadow: 0px 0px 20px white;
+    background-position: 67% 0%;
+}
+
+@keyframes animate {
+    0% {
+        background-color: #fff0;
+    }
+    100% {
+        background-color: #fff;
+    }
+}
+
+#whiteScreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0000;
+    animation: animate 1.5s reverse;
+}
+
+#tools {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px 0 0 20px;
+    color: white;
+}
+
+#toolsmenu{
+    margin-top: 20px;
+    background-color: #0000;
+    border-radius: 0px;
+    padding: 0;
+    overflow: hidden;
+    color: #fff0;
+    height: 0;
+    transition: .5s;
+}
+#toolsicon:checked + #toolsmenu {
+    border-radius: 25px;
+    padding: 25px;
+    height: 380px;
+    background: #000a;
+    color: #fff;
+}
+
+#toolsicon {
+    transform: rotate(0deg);
+    filter: invert(1);
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: url("Images/settings.png");
+    background-size: cover;
+    transition: .5s;
+}
+
+
+#toolsicon:checked {
+    transform: rotate(60deg);
+}
+
+input[type=number]{
+    width: 30px;
+    text-align: center;
+    appearance: none;
+    border: none;
+    color: inherit;
+    background: rgb(0, 217, 255);
+    overflow: hidden;
+    padding: 5px 0px 5px 5px;
+    border-radius: 5px;
+    transition: .2s;
+}
+input[type=number]:focus{
+    width: 40px;
+    padding-right: 5px;
+}
+input[type=number]:hover{
+    width: 40px;
+    padding-right: 5px;
+}
+
+li{
+    padding-bottom: 5px;
+    margin-left: 25px;
+}
