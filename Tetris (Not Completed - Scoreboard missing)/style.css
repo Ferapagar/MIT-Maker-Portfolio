@@ -1,0 +1,164 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #515151;
+}
+#container-out {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: min(96%, 66.66vw);
+  width: min(150vh, 96%);
+}
+#container-in {
+  background: linear-gradient(
+    135deg,
+    rgb(251, 0, 0),
+    rgb(251, 177, 0),
+    rgb(251, 232, 0),
+    rgb(0, 251, 77),
+    rgb(0, 228, 251),
+    rgb(0, 146, 251),
+    rgb(213, 0, 251),
+    rgb(251, 0, 0),
+    rgb(251, 177, 0)
+  );
+  background-size: 800% 800%;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  animation: a1 8s linear infinite;
+}
+@keyframes a1 {
+  from {
+    background-position-x: 0%;
+    background-position-y: 0%;
+  }
+  to {
+    background-position-x: 100%;
+    background-position-y: 100%;
+  }
+}
+#Gamefield-out {
+  display: none;
+  background: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 96%;
+  width: 33%;
+}
+#Gamefield-in {
+  border: 4px solid black;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#333333, #aaaaaa);
+}
+#Scoreboard-out {
+  display: none;
+  background: none;
+  position: absolute;
+  top: 65%;
+  left: calc(100% / 6);
+  transform: translate(-50%, -50%);
+  height: 33%;
+  width: 20%;
+}
+#Scoreboard-middle {
+  border: 4px solid black;
+  border-radius: 30px;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#333333, #aaaaaa);
+}
+.val-container {
+  height: 20%;
+  width: 90%;
+  position: absolute;
+  left: 5%;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: larger;
+  text-align: center;
+}
+.val-container .value {
+  background: #000000;
+  padding-top: 10px;
+  height: 50%;
+  border-radius: 20px;
+}
+#grid,
+#grid .row,
+#grid .row .cell {
+  border-collapse: separate;
+  border-spacing: 1px;
+}
+#grid {
+  position: absolute;
+  border: 2px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  top: 50.5%;
+  left: 50.5%;
+  height: 96%;
+  width: 96%;
+  transform: translate(-50%, -50%);
+  background-color: #555555;
+}
+#grid .row {
+  height: 5px;
+  width: 100%;
+}
+#grid .row .cell {
+  overflow: hidden;
+  width: 10%;
+  height: 5%;
+  background: black;
+  border: 1px rgb(75, 74, 74);
+  border-radius: 2px;
+}
+#menu {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  width: 60%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 10%;
+}
+#menu .logo {
+  width: 70%;
+}
+#menu .title {
+  color: whitesmoke;
+  font-family: "Press Start 2P", cursive;
+}
+#menu #start {
+  border-radius: 30px;
+  border: none;
+  padding: 3%;
+  width: 30%;
+  font-size: xx-large;
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(#555555, #aaaaaa);
+  color: white;
+}
+#Gamefield-in #count-p {
+  color: antiquewhite;
+  font-size: 800%;
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}

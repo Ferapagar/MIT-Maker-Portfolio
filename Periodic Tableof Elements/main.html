@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tabla Periódica</title>
+        <link rel="stylesheet" href="style.css" />
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1 class = "title">Periodic Table of Elements</h1>
+        <ul class = "selector">
+            <div id="marker"></div>
+            <li>Name</li>
+            <li id = "default">Atomic Number</li>
+            <li>Atomic Mass</li>
+            <li>Density</li>
+            <li>Melting Point</li>
+            <li>Boiling Point</li>
+            <li>Time of Discovery</li>
+        </ul>
+        <script>
+            const marker = document.querySelector("#marker");
+            const item = document.querySelectorAll(".selector li");
+            function indicator(e){
+                marker.style.left = e.offsetLeft-15+"px";
+                marker.style.width = e.offsetWidth+30+"px";
+                marker.style.top = e.offsetTop-15+"px";
+                marker.style.height = e.offsetHeight+30+"px";
+                putValues(e.innerHTML);
+            }
+            item.forEach(item => {
+                item.addEventListener("mousedown", (e) => {
+                    indicator(e.target)
+                })
+            })
+        </script>
+        <div id="card">
+            
+        </div>
+        <table id="table">
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr><td><div class = "c-container"><h3></h3><p></p></div></td></tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+            <tr>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+                <td><div class = "c-container"><h3></h3><p></p></div></td>
+            </tr>
+        </table>
+    </body>
+    <script src="elements.js"></script>
+    <script src="script.js"></script>
+</html>
